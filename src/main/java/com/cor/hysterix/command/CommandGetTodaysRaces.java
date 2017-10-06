@@ -51,9 +51,10 @@ public class CommandGetTodaysRaces extends HystrixCommand<List<Racecourse>> {
 		// can log here, throw exception or return default
 		if (failSilently) {
 			return new ArrayList<Racecourse>();
-		} else {
-			throw new RemoteServiceException("Unexpected error retrieving todays races");
 		}
+			
+		throw new RemoteServiceException("Unexpected error retrieving todays races");
+		
 	}
 
 }
